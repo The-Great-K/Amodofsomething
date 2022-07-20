@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT"
+
+[[mods]]
+modId="somethingmod" 
+version="0.0.1"
+displayName="Something Mod"
+logoFile="somethingmod.png" 
+credits="TurtyWurty (Tutorials), CodaKid (Tutorials, Help)" 
+authors="The_Great_K, CodaKid" 
+description='''
+
+A Mod of Something made by The_Great_K using tutorials from
+TurtyWurty and CodaKid.
+
+'''
+
+[[dependencies.somethingmod]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[40,)" 
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.somethingmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
