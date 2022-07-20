@@ -1,42 +1,66 @@
 package thegreatk.somethingmod.CodakidFiles;
 
 import java.util.ArrayList;
+import java.util.function.Supplier;
 
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import thegreatk.somethingmod.ModOfSomething;
 
-public class Codakid {
-
+public class Codakid
+{
+	
+	public static final DeferredRegister<Item> REGISTER_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModOfSomething.MODID);
+	public static final DeferredRegister<Block> REGISTER_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModOfSomething.MODID);
+	
     public static ArrayList<Block> blocksToRegister = new ArrayList<>();
     public static ArrayList<Item> itemsToRegister = new ArrayList<>();
     
-    public static void registerBlock(Block block, String registryName) {
-        block.setRegistryName(registryName);
-        ItemNameBlockItem itemBlock = new ItemNameBlockItem(block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
-        itemBlock.setRegistryName(registryName);
-        blocksToRegister.add(block);
-        itemsToRegister.add(itemBlock);
+    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab)
+    {
+        RegistryObject<T> toReturn = REGISTER_BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return  toReturn;
     }
 
-    public static void registerItem(Item item, String registryName) {
-        item.setRegistryName(registryName);
-        itemsToRegister.add(item);
+    public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab)
+    {
+        return REGISTER_ITEMS.register(name, () -> new BlockItem(block.get(),
+            new Item.Properties().tab(tab)));
+    }
+    
+    public static void registerBlock(IEventBus eventBus)
+    {
+    	REGISTER_BLOCKS.register(eventBus);
     }
 
-    public static void doBlockRegistry(RegistryEvent.Register<Block> event) {
+    
+    public static void registerItem(IEventBus eventBus)
+    {
+    	REGISTER_ITEMS.register(eventBus);
+    }
+
+    public static void doBlockRegistry(RegistryEvent.Register<Block> event)
+    {
         event.getRegistry().registerAll(blocksToRegister.toArray(new Block[blocksToRegister.size()]));
     }
     
-    public static void doItemRegistry(RegistryEvent.Register<Item> event) {
+    public static void doItemRegistry(RegistryEvent.Register<Item> event) 
+    {
         event.getRegistry().registerAll(itemsToRegister.toArray(new Item[itemsToRegister.size()]));
     }
 
-    public static Tier addTier(int miningLevel, int maxUses, float miningSpeed, float damageBonus, int enchantability){
+    public static Tier addTier(int miningLevel, int maxUses, float miningSpeed, float damageBonus, int enchantability)
+    {
 
         return new Tier() {
             @Override
