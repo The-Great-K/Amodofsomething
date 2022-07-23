@@ -19,34 +19,34 @@ import thegreatk.somethingmod.ModOfSomething;
 public class Codakid
 {
 	
-	public static final DeferredRegister<Item> REGISTER_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModOfSomething.MODID);
-	public static final DeferredRegister<Block> REGISTER_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModOfSomething.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModOfSomething.MODID);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModOfSomething.MODID);
 	
     public static ArrayList<Block> blocksToRegister = new ArrayList<>();
     public static ArrayList<Item> itemsToRegister = new ArrayList<>();
     
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab)
     {
-        RegistryObject<T> toReturn = REGISTER_BLOCKS.register(name, block);
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return  toReturn;
     }
 
     public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab)
     {
-        return REGISTER_ITEMS.register(name, () -> new BlockItem(block.get(),
+        return ITEMS.register(name, () -> new BlockItem(block.get(),
             new Item.Properties().tab(tab)));
     }
     
     public static void registerBlock(IEventBus eventBus)
     {
-    	REGISTER_BLOCKS.register(eventBus);
+    	BLOCKS.register(eventBus);
     }
 
     
     public static void registerItem(IEventBus eventBus)
     {
-    	REGISTER_ITEMS.register(eventBus);
+    	ITEMS.register(eventBus);
     }
 
     public static void doBlockRegistry(RegistryEvent.Register<Block> event)

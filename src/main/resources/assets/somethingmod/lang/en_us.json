@@ -1,4 +1,6 @@
 {
+	"itemGroup.somethingmod": "Mod Of Something",
+
 	"item.somethingmod.silver_ore": "Silver Ore",
 	"item.somethingmod.silver_sword": "Silver Sword"
 }

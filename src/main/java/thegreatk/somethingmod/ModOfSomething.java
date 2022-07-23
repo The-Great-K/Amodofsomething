@@ -1,6 +1,9 @@
 package thegreatk.somethingmod;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,18 +23,28 @@ public class ModOfSomething
     
     public static ModOfSomething instance;
     
+    //****************** DECLARE TIERS *****************
     public static Tier SILVER;
-
     
     public ModOfSomething()
     {
     	
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
-        Codakid.REGISTER_ITEMS.register(eventBus);
-        Codakid.REGISTER_BLOCKS.register(eventBus);
+        Codakid.ITEMS.register(eventBus);
+        Codakid.BLOCKS.register(eventBus);
         
     }
+    
+    public static final CreativeModeTab SOMETHING_MOD_TAB = new CreativeModeTab(MODID)
+    {
+		
+		@Override
+		public ItemStack makeIcon() 
+		{
+			return Items.BLACKSTONE.getDefaultInstance();
+		}
+	};
     
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)

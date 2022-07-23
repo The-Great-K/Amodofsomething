@@ -1,14 +1,19 @@
 package thegreatk.somethingmod.init;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.registries.RegistryObject;
+import thegreatk.somethingmod.ModOfSomething;
 import thegreatk.somethingmod.CodakidFiles.Codakid;
-import thegreatk.somethingmod.items.silver.SilverSwordItem;
 
-public class SomethingModItems
+public final class SomethingModItems
 {
 	
+	private SomethingModItems() {}
+	
 	//Silver
-	public static final RegistryObject<Item> SILVER_SWORD = Codakid.REGISTER_ITEMS.register("silver_sword", () -> new SilverSwordItem());
+	public static final RegistryObject<SwordItem> SILVER_SWORD = Codakid.ITEMS.register("silver_sword",
+		() -> new SwordItem(ModOfSomething.SILVER, 0, -1.6F,
+			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 }

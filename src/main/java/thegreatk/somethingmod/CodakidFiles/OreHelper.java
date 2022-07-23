@@ -41,7 +41,7 @@ public class OreHelper
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreWorldGen::generate);
     }
 
-    public static void sivlerOreGeneration(final BiomeLoadingEvent event, RuleTest rule, BlockState state, String registryName, int veinSize, int minHeight, int maxHeight, int amount) 
+    public static void silverOreGeneration(final BiomeLoadingEvent event, RuleTest rule, BlockState state, String registryName, int veinSize, int minHeight, int maxHeight, int amount) 
     {
     	OreConfiguration overworldSilverConfig = new OreConfiguration(rule, state, veinSize);
         OVERWORLD_SILVER_GEN = registerPlacedOreFeature(registryName, new ConfiguredFeature<>(Feature.ORE, overworldSilverConfig),
@@ -50,14 +50,16 @@ public class OreHelper
             	BiomeFilter.biome(),
             	HeightRangePlacement.uniform(VerticalAnchor.absolute(minHeight), VerticalAnchor.absolute(maxHeight))
         );
-        if (event.getCategory() == Biome.BiomeCategory.NETHER) {
-        } else if (event.getCategory() == Biome.BiomeCategory.THEEND) {
-        } else {
+        if (event.getCategory() == Biome.BiomeCategory.NETHER) {} 
+        else if (event.getCategory() == Biome.BiomeCategory.THEEND) {}
+        else 
+        {
             event.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OVERWORLD_SILVER_GEN);
         }
     }
 
-    private static <C extends FeatureConfiguration, F extends Feature<C>> Holder<PlacedFeature> registerPlacedOreFeature(String registryName, ConfiguredFeature<C, F> feature, PlacementModifier... placementModifiers) {
+    private static <C extends FeatureConfiguration, F extends Feature<C>> Holder<PlacedFeature> registerPlacedOreFeature(String registryName, ConfiguredFeature<C, F> feature, PlacementModifier... placementModifiers)
+    {
         return PlacementUtils.register(registryName, Holder.direct(feature), placementModifiers);
     }
 }
