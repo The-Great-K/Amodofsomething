@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "MMM",
+        " # ",
+        " # "
+    ],
+    "key": {
+        "M": {
+            "item": "somethingmod:silver_ingot"
+        },
+        "#": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "somethingmod:silver_pickaxe",
+        "count": 1
+    }
+}

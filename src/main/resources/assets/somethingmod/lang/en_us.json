@@ -2,7 +2,14 @@
 	"itemGroup.somethingmod": "Mod Of Something",
 
 	"block.somethingmod.silver_ore": "Silver Ore",
-	"item.somthingmod.raw_silver": "Raw Silver",
+	"block.somethingmod.raw_silver_block": "Block of Raw Silver",
+	"block.somethingmod.silver_block": "Block of Silver",
+	"item.somethingmod.raw_silver": "Raw Silver",
 	"item.somethingmod.silver_ingot": "Silver Ingot",
-	"item.somethingmod.silver_sword": "Silver Sword"
+	"item.somethingmod.silver_nugget": "Silver Nugget",
+	"item.somethingmod.silver_sword": "Silver Sword",
+	"item.somethingmod.silver_pickaxe": "Silver Pickaxe",
+	"item.somethingmod.silver_axe": "Silver Axe",
+	"item.somethingmod.silver_shovel": "Silver Shovel",
+	"item.somethingmod.silver_hoe": "Silver Hoe"
 }

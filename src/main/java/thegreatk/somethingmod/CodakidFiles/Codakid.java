@@ -5,33 +5,43 @@ import java.util.function.Supplier;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import thegreatk.somethingmod.ModOfSomething;
+import thegreatk.somethingmod.init.BlockInit;
+import thegreatk.somethingmod.init.ItemInit;
 
 public class Codakid
 {
 	
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModOfSomething.MODID);
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModOfSomething.MODID);
-	
-	public static <T extends Item> RegistryObject<T> registerItem(final String name, final Supplier<T> item)
-	{
-		return ITEMS.register(name, item);
-	}
-	
+	/**
+	 * Creates a Setup for a Block to be
+	 * Registered
+	 * 
+	 * @param <T>
+	 * @param name
+	 * @param block
+	 * @return
+	 */
 	public static <T extends Block> RegistryObject<T> registerBlockSetup(final String name,
 			final Supplier<? extends T> block) 
 	{
-		return BLOCKS.register(name, block);
+		return BlockInit.BLOCKS.register(name, block);
 	}
 
+	/**
+	 * Defines and Registers the Block Item Declared
+	 * and Creates a Block for use
+	 * 
+	 * @param <T>
+	 * @param name
+	 * @param block
+	 * @param item
+	 * @return
+	 */
 	public static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block,
 		Function<RegistryObject<T>, Supplier<? extends Item>> item) 
 	{
 		RegistryObject<T> obj = registerBlockSetup(name, block);
-		ITEMS.register(name, item.apply(obj));
+		ItemInit.ITEMS.register(name, item.apply(obj));
 		return obj;
 	}
 

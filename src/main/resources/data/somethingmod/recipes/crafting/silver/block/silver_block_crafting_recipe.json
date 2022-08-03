@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "MMM",
+        "MMM",
+        "MMM"
+    ],
+    "key": {
+        "M": {
+            "item": "somethingmod:silver_ingot"
+        }
+    },
+    "result": {
+        "item": "somethingmod:silver_block",
+        "count": 1
+    }
+}
