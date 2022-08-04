@@ -6,6 +6,6 @@ import thegreatk.somethingmod.helpers.CreateTier;
 
 public final class TierInit {
 	
-	public static final Tier SILVER = new CreateTier(2, 129, 0, 4, 18, () -> Ingredient.of(ItemInit.SILVER_INGOT.get()));
+	public static final Tier SILVER = new CreateTier(129, 0, 1, 18, 2, () -> Ingredient.of(ItemInit.SILVER_INGOT.get()));
 
 }

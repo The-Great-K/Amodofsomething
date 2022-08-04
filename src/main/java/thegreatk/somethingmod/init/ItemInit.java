@@ -29,23 +29,23 @@ public final class ItemInit
 		() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 	public static final RegistryObject<Item> SILVER_SWORD = ITEMS.register("silver_sword",
-		() -> new SwordItem(TierInit.SILVER, 0, -2.4F,
+		() -> new SwordItem(TierInit.SILVER, 3, -2.4F,
 			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 	public static final RegistryObject<Item> SILVER_PICKAXE = ITEMS.register("silver_pickaxe", 
-		() -> new PickaxeItem(TierInit.SILVER, 0, -2.8F,
+		() -> new PickaxeItem(TierInit.SILVER, 1, -2.8F,
 			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 	public static final RegistryObject<Item> SILVER_AXE = ITEMS.register("silver_axe",
-		() -> new AxeItem(TierInit.SILVER, 0, -3F,
+		() -> new AxeItem(TierInit.SILVER, 6, -3.0F,
 			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 	public static final RegistryObject<Item> SILVER_SHOVEL = ITEMS.register("silver_shovel",
-		() -> new ShovelItem(TierInit.SILVER, 0, -3F,
+		() -> new ShovelItem(TierInit.SILVER, 1.5F, -3.0F,
 			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 	public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe", 
-		() -> new HoeItem(TierInit.SILVER, 0, -2F,
+		() -> new HoeItem(TierInit.SILVER, -1, -2.0F,
 			new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 	
 }

@@ -12,8 +12,8 @@ public class CreateTier implements Tier
 	private final int enchantibility, harvestLevel, durability;
 	private final Supplier<Ingredient> repairMaterial;
 	
-	public CreateTier(int harvestLevel, int durability, float speed, float attackDamageBonus,
-			int enchantability, Supplier<Ingredient> repairMaterial)
+	public CreateTier(int durability, float speed, float attackDamageBonus, int enchantability,
+			int harvestLevel, Supplier<Ingredient> repairMaterial)
 	{
 		this.attackDamageBonus = attackDamageBonus;
 		this.speed = speed;
