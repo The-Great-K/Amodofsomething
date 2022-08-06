@@ -1,5 +1,7 @@
 {
 	"itemGroup.somethingmod": "Mod Of Something",
+	
+	"block.somethingmod.xp_converter": "XP Converter",
 
 	"block.somethingmod.silver_ore": "Silver Ore",
 	"block.somethingmod.raw_silver_block": "Block of Raw Silver",
@@ -11,5 +13,9 @@
 	"item.somethingmod.silver_pickaxe": "Silver Pickaxe",
 	"item.somethingmod.silver_axe": "Silver Axe",
 	"item.somethingmod.silver_shovel": "Silver Shovel",
-	"item.somethingmod.silver_hoe": "Silver Hoe"
+	"item.somethingmod.silver_hoe": "Silver Hoe",
+	"item.somethingmod.silver_helmet": "Silver Helmet",
+	"item.somethingmod.silver_chestplate": "Silver Chestplate",
+	"item.somethingmod.silver_leggings": "Silver Leggings",
+	"item.somethingmod.silver_boots": "Silver Boots"
 }
