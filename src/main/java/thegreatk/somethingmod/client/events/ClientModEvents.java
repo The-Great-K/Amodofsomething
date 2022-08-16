@@ -18,7 +18,7 @@ public final class ClientModEvents {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.XP_CONVERTER.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.XP_CONVERTER.get(), RenderType.cutoutMipped());
 	}
 
 }

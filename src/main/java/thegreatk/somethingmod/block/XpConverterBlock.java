@@ -76,15 +76,15 @@ public class XpConverterBlock extends HorizontalDirectionalBlock {
 				level.playSound(player, pos, SoundEvents.AMETHYST_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
 				player.giveExperienceLevels(-10);
 				return InteractionResult.FAIL;
-			}
-
-			level.playSound(player, pos, SoundEvents.ENDERMAN_DEATH, SoundSource.PLAYERS, 1.0F, 1.0F);
-			for (int index = 0; index < this.RANDOM.nextInt(10) + 7; index++) {
-				MushroomCow cow = EntityType.MOOSHROOM.create(level);
-				cow.setPos(pos.getX() + this.RANDOM.nextInt(10) - 5, pos.getY(),
-						pos.getZ() + this.RANDOM.nextInt(10) - 5);
-				cow.addTag("Slave");
-				level.addFreshEntity(cow);
+			} else {
+				level.playSound(player, pos, SoundEvents.ENDERMAN_DEATH, SoundSource.PLAYERS, 1.0F, 1.0F);
+				for (int index = 0; index < this.RANDOM.nextInt(10) + 7; index++) {
+					MushroomCow cow = EntityType.MOOSHROOM.create(level);
+					cow.setPos(pos.getX() + this.RANDOM.nextInt(10) - 5, pos.getY(),
+							pos.getZ() + this.RANDOM.nextInt(10) - 5);
+					cow.addTag("Slave");
+					level.addFreshEntity(cow);
+				}
 			}
 			return InteractionResult.SUCCESS;
 		}
