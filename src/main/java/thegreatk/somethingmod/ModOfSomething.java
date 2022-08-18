@@ -9,6 +9,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import thegreatk.somethingmod.init.BlockEntityInit;
 import thegreatk.somethingmod.init.BlockInit;
 import thegreatk.somethingmod.init.ItemInit;
 
@@ -28,6 +29,7 @@ public class ModOfSomething {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		BlockInit.BLOCKS.register(bus);
+		BlockEntityInit.BLOCK_ENTITIES.register(bus);
 		ItemInit.ITEMS.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);

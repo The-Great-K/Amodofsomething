@@ -18,7 +18,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -28,8 +32,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import thegreatk.somethingmod.ModOfSomething;
+import thegreatk.somethingmod.block.entity.XpConverterBlockEntity;
+import thegreatk.somethingmod.init.BlockEntityInit;
 
-public class XpConverterBlock extends HorizontalDirectionalBlock {
+public class XpConverterBlock extends HorizontalDirectionalBlock implements EntityBlock {
 
 	private static final Map<Direction, VoxelShape> SHAPES = new EnumMap<>(Direction.class);
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -89,6 +95,18 @@ public class XpConverterBlock extends HorizontalDirectionalBlock {
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.FAIL;
+	}
+
+	@Override
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return BlockEntityInit.XP_CONVERTER.get().create(pos, state);
+	}
+
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
+			BlockEntityType<T> type) {
+		return level.isClientSide ? null
+				: (level0, pos, state0, blockEntity) -> ((XpConverterBlockEntity) blockEntity).tick(pos, level);
 	}
 
 }
