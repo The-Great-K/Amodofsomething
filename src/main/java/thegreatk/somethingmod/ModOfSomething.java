@@ -22,8 +22,6 @@ public class ModOfSomething {
 	public static final String MODNAME = "A Mod Of Something";
 	public static String VERSION = "0.0.1";
 
-	public static ModOfSomething instance;
-
 	public ModOfSomething() {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

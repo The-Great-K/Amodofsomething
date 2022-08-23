@@ -77,7 +77,7 @@ public class XpConverterBlock extends HorizontalDirectionalBlock implements Enti
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
-		if (!level.isClientSide) {
+		if (!level.isClientSide && !player.isShiftKeyDown()) {
 			if (player.experienceLevel <= 1 && !player.isCreative()) {
 				level.playSound(player, pos, SoundEvents.AMETHYST_BLOCK_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
 				player.giveExperienceLevels(-10);
@@ -106,7 +106,7 @@ public class XpConverterBlock extends HorizontalDirectionalBlock implements Enti
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
 			BlockEntityType<T> type) {
 		return level.isClientSide ? null
-				: (level0, pos, state0, blockEntity) -> ((XpConverterBlockEntity) blockEntity).tick(pos, level);
+				: (level0, pos, state0, blockEntity) -> ((XpConverterBlockEntity) blockEntity).tick();
 	}
 
 }
