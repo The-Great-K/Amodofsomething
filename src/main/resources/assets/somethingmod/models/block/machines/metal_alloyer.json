@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "somethingmod:block/metal_alloyer_top",
+    "front": "somethingmod:block/metal_alloyer_front",
+    "side": "somethingmod:block/metal_alloyer_side"
+  }
+}

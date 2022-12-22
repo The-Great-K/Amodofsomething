@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "somethingmod:block/xp_converter" },
-        "facing=south": { "model": "somethingmod:block/xp_converter", "y": 180 },
-        "facing=west": { "model": "somethingmod:block/xp_converter", "y": 270 },
-        "facing=east": { "model": "somethingmod:block/xp_converter", "y": 90 }
-    }
-}

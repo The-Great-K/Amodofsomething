@@ -1,5 +1,8 @@
 package thegreatk.somethingmod;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +24,10 @@ public class ModOfSomething {
 	public static final String MODID = "somethingmod";
 	public static final String MODNAME = "A Mod Of Something";
 	public static String VERSION = "0.0.1";
+	public static final String MC_VERSION = "1.18.2";
+	public static final String GITHUB_BRANCH = "1.18.2";
+
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public ModOfSomething() {
 

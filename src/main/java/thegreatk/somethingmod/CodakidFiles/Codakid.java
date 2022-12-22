@@ -27,7 +27,7 @@ public class Codakid {
 	/**
 	 * Defines and Registers the Block Item Declared and Creates a Block for use
 	 * 
-	 * @param <T>
+	 * @param <T>z
 	 * @param name
 	 * @param block
 	 * @param item

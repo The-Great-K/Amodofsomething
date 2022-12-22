@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "somethingmod:block/electrum_block"
+    }
+  }
+}

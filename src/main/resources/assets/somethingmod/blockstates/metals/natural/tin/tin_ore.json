@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "somethingmod:block/tin_ore"
+    }
+  }
+}

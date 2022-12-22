@@ -1,0 +1,7 @@
+[13Nov2022 16:55:29.429] [main/ERROR] [net.minecraft.server.Main/FATAL]: Failed to start the minecraft server
+java.lang.NullPointerException: Cannot invoke "net.minecraftforge.fml.loading.LoadingModList.getErrors()" because the return value of "net.minecraftforge.fml.loading.FMLLoader.getLoadingModList()" is null
+	at net.minecraftforge.fml.ModLoader.<init>(ModLoader.java:92) ~[fmlcore-1.18.2-40.1.0.jar:?]
+	at net.minecraftforge.fml.ModLoader.get(ModLoader.java:126) ~[fmlcore-1.18.2-40.1.0.jar:?]
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:32) ~[forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar:?]
+	at net.minecraft.server.Main.main(Main.java:112) [forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar:?]
+	at net.minecraftforge.gametest.GameTestMain.main(GameTestMain.java:16) [forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar:?]

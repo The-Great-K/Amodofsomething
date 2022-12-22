@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": {
+		"item": "somethingmod:silver_ore"
+	},
+	"result": "somethingmod:silver_ingot",
+	"experience": 0.8
+}

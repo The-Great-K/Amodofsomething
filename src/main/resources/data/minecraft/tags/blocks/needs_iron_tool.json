@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"somethingmod:silver_ore",
+		"somethingmod:raw_silver_block",
+		"somethingmod:silver_block"
+	]
+}

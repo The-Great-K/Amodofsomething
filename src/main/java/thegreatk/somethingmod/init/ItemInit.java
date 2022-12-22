@@ -21,6 +21,7 @@ public final class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
 			ModOfSomething.MODID);
 
+	// NATURAL METALS
 	// Silver
 	public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
 			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
@@ -64,5 +65,33 @@ public final class ItemInit {
 	public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
 			() -> new ArmorItem(TierInit.SILVER_ARMOR, EquipmentSlot.FEET,
 					new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	// Tin
+	public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	public static final RegistryObject<Item> TIN_NUGGET = ITEMS.register("tin_nugget",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	// Titanium
+	public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_ingot",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	// ALLOYED METALS
+	// Electrum
+	public static final RegistryObject<Item> ELECTRUM_INGOT = ITEMS.register("electrum_ingot",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
+
+	public static final RegistryObject<Item> ELECTRUM_NUGGET = ITEMS.register("electrum_nugget",
+			() -> new Item(new Item.Properties().tab(ModOfSomething.SOMETHING_MOD_TAB)));
 
 }

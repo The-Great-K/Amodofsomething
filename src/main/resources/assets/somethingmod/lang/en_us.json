@@ -1,7 +1,8 @@
 {
 	"itemGroup.somethingmod": "Mod Of Something",
 	
-	"block.somethingmod.xp_converter": "XP Converter",
+	"block.somethingmod.metal_alloyer": "Metal Alloyer Furnace",
+	"container.metal_alloyer": "Metal Alloyer Furnace",
 
 	"block.somethingmod.silver_ore": "Silver Ore",
 	"block.somethingmod.raw_silver_block": "Block of Raw Silver",
@@ -17,5 +18,23 @@
 	"item.somethingmod.silver_helmet": "Silver Helmet",
 	"item.somethingmod.silver_chestplate": "Silver Chestplate",
 	"item.somethingmod.silver_leggings": "Silver Leggings",
-	"item.somethingmod.silver_boots": "Silver Boots"
+	"item.somethingmod.silver_boots": "Silver Boots",
+	
+	"block.somethingmod.tin_ore": "Tin Ore",
+	"block.somethingmod.raw_tin_block": "Block of Raw Tin",
+	"block.somethingmod.tin_block": "Block of Tin",
+	"item.somethingmod.raw_tin": "Raw Tin",
+	"item.somethingmod.tin_ingot": "Tin Ingot",
+	"item.somethingmod.tin_nugget": "Tin Nugget",
+	
+	"block.somethingmod.titanium_ore": "Titanium Ore",
+	"block.somethingmod.raw_titanium_block": "Block of Raw Titnanium",
+	"block.somethingmod.titanium_block": "Block of Titanium",
+	"item.somethingmod.raw_titanium": "Raw Titanium",
+	"item.somethingmod.titanium_ingot": "Titanium Ingot",
+	"item.somethingmod.titanium_nugget": "Titanium Nugget",
+	
+	"block.somethingmod.electrum_block": "Block of Electrum",
+	"item.somethingmod.electrum_ingot": "Electrum Ingot",
+	"item.somethingmod.electrum_nugget": "Electrum Nugget"
 }
